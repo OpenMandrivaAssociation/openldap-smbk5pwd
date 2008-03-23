@@ -6,7 +6,7 @@ License:    Artistic
 Group: 		System/Servers
 URL: 		http://www.openldap.org
 Source0: 	openldap-smbk5pwd-%{version}.tar.gz
-BuildRequires: heimdal-devel openldap-devel >= 2.4.8
+BuildRequires: heimdal-devel openldap-devel >= 2.4.8 libtool
 BuildRoot:  %{_tmppath}/%{name}-%{version}
 
 %description
