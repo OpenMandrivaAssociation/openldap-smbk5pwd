@@ -10,6 +10,7 @@ Patch:      openldap-smbk5pwd-2.4.8-dont-use-internal-functions.patch
 BuildRequires: heimdal-devel
 BuildRequires: openldap-devel >= 2.4.8
 BuildRequires: tcp_wrappers-devel
+BuildRequires: libtool
 BuildRoot:  %{_tmppath}/%{name}-%{version}
 
 %description
