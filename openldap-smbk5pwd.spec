@@ -1,12 +1,13 @@
 Name:       openldap-smbk5pwd
 Version:    2.4.8
-Release:    %mkrel 2
+Release:    %mkrel 3
 Summary:    OpenLdap smbk5pwd overlay
 License:    Artistic
 Group: 		System/Servers
 URL: 		http://www.openldap.org
 Source0: 	openldap-smbk5pwd-%{version}.tar.gz
-Patch:      openldap-smbk5pwd-2.4.8-dont-use-internal-functions.patch
+Patch0:     openldap-smbk5pwd-2.4.8-dont-use-internal-functions.patch
+Patch1:     openldap-smbk5pwd-2.4.8-fix-password-termination.patch
 BuildRequires: heimdal-devel
 BuildRequires: openldap-devel >= 2.4.8
 BuildRequires: tcp_wrappers-devel
@@ -20,7 +21,8 @@ password hashes for an LDAP user.
 
 %prep
 %setup -q -n smbk5pwd
-%patch -p 0
+%patch0 -p 0
+%patch1 -p 0
 
 %build
 make \
