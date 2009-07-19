@@ -1,12 +1,11 @@
 Name:       openldap-smbk5pwd
-Version:    2.4.15
+Version:    2.4.17
 Release:    %mkrel 1
 Summary:    OpenLdap smbk5pwd overlay
 License:    Artistic
 Group: 		System/Servers
 URL: 		http://www.openldap.org
 Source0: 	openldap-smbk5pwd-%{version}.tar.bz2
-Patch0:     openldap-smbk5pwd-2.4.8-dont-use-internal-functions.patch
 BuildRequires: heimdal-devel
 BuildRequires: openldap-devel >= 2.4.8
 BuildRequires: tcp_wrappers-devel
@@ -20,7 +19,6 @@ password hashes for an LDAP user.
 
 %prep
 %setup -q -n openldap-%{version}/contrib/slapd-modules/smbk5pwd
-%patch0 -p 0
 
 %build
 make \
