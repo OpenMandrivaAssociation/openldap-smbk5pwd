@@ -1,6 +1,6 @@
 Name:       openldap-smbk5pwd
 Version:    2.4.17
-Release:    %mkrel 1
+Release:    %mkrel 2
 Summary:    OpenLdap smbk5pwd overlay
 License:    Artistic
 Group: 		System/Servers
@@ -22,8 +22,8 @@ password hashes for an LDAP user.
 
 %build
 make \
-    libdir=%{_libdir} \
     LIBTOOL=%{_bindir}/libtool \
+    HEIMDAL_LIB="-L%{_libdir} -lkrb5 -lkadm5srv" \
     LDAP_INC="-I%{_includedir}/openldap/include -I%{_includedir}/openldap/slapd"
 
 %install
