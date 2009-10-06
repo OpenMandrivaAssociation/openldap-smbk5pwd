@@ -1,6 +1,6 @@
 Name:       openldap-smbk5pwd
-Version:    2.4.17
-Release:    %mkrel 2
+Version:    2.4.19
+Release:    %mkrel 1
 Summary:    OpenLdap smbk5pwd overlay
 License:    Artistic
 Group: 		System/Servers
