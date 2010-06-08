@@ -17,6 +17,12 @@ This package contains a slapd overlay, smbk5pwd, that extends the
 PasswordModify Extended Operation to update Kerberos keys and Samba
 password hashes for an LDAP user.
 
+Note that this package is built with Heimdal support, and requires a working
+Heimdal KDC configuration. If you only need support for changing Samba password 
+hashes, you can use the 'smbpwd.so' copy provided in openldap-servers (just use 
+'moduleload smbpwd.so' instead of 'moduleload smbk5pwd.so) which is identical
+except that it is built without Heimdal support.
+
 %prep
 %setup -q -n openldap-%{version}/contrib/slapd-modules/smbk5pwd
 
