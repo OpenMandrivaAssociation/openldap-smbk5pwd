@@ -1,8 +1,8 @@
 %{!?ldflags: %global ldflags -Wl,-z,relro -Wl,-O1}
 
 Name:       openldap%{?olmajor}-smbk5pwd
-Version:    2.4.21
-Release:    %mkrel 4
+Version:    2.4.22
+Release:    %mkrel 1
 Summary:    OpenLdap smbk5pwd overlay
 License:    Artistic
 Group: 		System/Servers
