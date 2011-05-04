@@ -1,7 +1,9 @@
 %{!?ldflags: %global ldflags -Wl,-z,relro -Wl,-O1}
 
-Name:       openldap-smbk5pwd
-Version:    2.4.24
+%global openldap openldap%{?olmajor}
+
+Name:       %openldap-smbk5pwd
+Version:    2.4.25
 Release:    %mkrel 1
 Summary:    OpenLdap smbk5pwd overlay
 License:    Artistic
@@ -11,10 +13,10 @@ URL: 		http://www.openldap.org
 # tar cvjf openldap-smbk5pwd-2.4.24.tar.bz2 openldap-2.4.24/contrib
 Source0: 	openldap-smbk5pwd-%{version}.tar.bz2
 BuildRequires: heimdal-devel
-BuildRequires: openldap-devel = %{version}
+BuildRequires: %openldap-devel = %{version}
 BuildRequires: tcp_wrappers-devel
 BuildRequires: libtool
-Requires:   openldap-servers = %{version}
+Requires:   %openldap-servers = %{version}
 BuildRoot:  %{_tmppath}/%{name}-%{version}
 
 %description
@@ -36,12 +38,11 @@ make \
     OPT="%optflags %ldflags" \
     LIBTOOL=%{_bindir}/libtool \
     HEIMDAL_LIB="-L%{_libdir} -L%{_libdir}/heimdal -lkrb5 -lkadm5srv" \
-    LDAP_INC="-I%{_includedir}/openldap/include -I%{_includedir}/openldap/slapd"
+    LDAP_INC="-I%{_includedir}/%openldap/include -I%{_includedir}/%openldap/slapd"
 
 %install
 rm -rf %{buildroot}
-install -d -m 755 %{buildroot}/%{_libdir}/openldap
-cp  .libs/smbk5pwd.so* %{buildroot}/%{_libdir}/openldap
+%makeinstall_std moduledir=%{_libdir}/%openldap LIBTOOL=%{_bindir}/libtool
 
 %clean
 rm -rf %{buildroot}
@@ -49,4 +50,4 @@ rm -rf %{buildroot}
 %files
 %defattr(-,root,root)
 %doc README
-%{_libdir}/openldap/*
+%{_libdir}/%openldap/*
