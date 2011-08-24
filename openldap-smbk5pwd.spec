@@ -3,7 +3,7 @@
 %global openldap openldap%{?olmajor}
 
 Name:       %openldap-smbk5pwd
-Version:    2.4.25
+Version:    2.4.26
 Release:    %mkrel 1
 Summary:    OpenLdap smbk5pwd overlay
 License:    Artistic
