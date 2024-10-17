@@ -8,7 +8,7 @@ Release:    %mkrel 1
 Summary:    OpenLdap smbk5pwd overlay
 License:    Artistic
 Group: 		System/Servers
-URL: 		http://www.openldap.org
+URL: 		https://www.openldap.org
 # the source is created as:
 # tar cvjf openldap-smbk5pwd-2.4.24.tar.bz2 openldap-2.4.24/contrib
 Source0: 	openldap-smbk5pwd-%{version}.tar.bz2
