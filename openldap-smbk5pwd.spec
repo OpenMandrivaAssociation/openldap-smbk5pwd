@@ -12,6 +12,7 @@ URL: 		https://www.openldap.org
 # the source is created as:
 # tar cvjf openldap-smbk5pwd-2.4.24.tar.bz2 openldap-2.4.24/contrib
 Source0: 	openldap-smbk5pwd-%{version}.tar.bz2
+BuildRequires:	make
 BuildRequires: heimdal-devel
 BuildRequires: %openldap-devel = %{version}
 BuildRequires: tcp_wrappers-devel
